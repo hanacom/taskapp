@@ -13,6 +13,7 @@
 		9D3B83352020A2F100740CA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3B83332020A2F100740CA6 /* Main.storyboard */; };
 		9D3B83372020A2F100740CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3B83362020A2F100740CA6 /* Assets.xcassets */; };
 		9D3B833A2020A2F100740CA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3B83382020A2F100740CA6 /* LaunchScreen.storyboard */; };
+		9DDD6894202728FC00AD438B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDD6893202728FC00AD438B /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9D3B83362020A2F100740CA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D3B83392020A2F100740CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D3B833B2020A2F100740CA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DDD6893202728FC00AD438B /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				9D3B83382020A2F100740CA6 /* LaunchScreen.storyboard */,
 				9D3B833B2020A2F100740CA6 /* Info.plist */,
 				9D0D8DD12026D90200A3C41C /* InputViewController.swift */,
+				9DDD6893202728FC00AD438B /* Task.swift */,
 			);
 			path = taskapp;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DDD6894202728FC00AD438B /* Task.swift in Sources */,
 				9D0D8DD22026D90200A3C41C /* InputViewController.swift in Sources */,
 				9D3B83322020A2F100740CA6 /* ViewController.swift in Sources */,
 				9D3B83302020A2F100740CA6 /* AppDelegate.swift in Sources */,
