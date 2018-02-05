@@ -17,7 +17,7 @@ class Task: Object {
     
     @objc dynamic var date = Date()
     
-    override static func primarykey() -> String? {
+    override static func primaryKey() -> String? {
         return "id"
     }
 }
