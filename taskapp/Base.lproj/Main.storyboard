@@ -95,7 +95,7 @@
         <!--Input View Controller-->
         <scene sceneID="Uep-fe-zhX">
             <objects>
-                <viewController id="nlx-gM-6p1" customClass="UIInputViewController" sceneMemberID="viewController">
+                <viewController id="nlx-gM-6p1" customClass="InputViewController" customModule="taskapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="glU-qV-joo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,6 +161,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M42-5E-UTf"/>
                     </view>
+                    <connections>
+                        <outlet property="contentsTextView" destination="hHn-aF-cdO" id="XeP-Dl-eSS"/>
+                        <outlet property="datePicker" destination="2rz-MS-nAt" id="07W-Gp-Okj"/>
+                        <outlet property="titleTextField" destination="y09-z4-JPk" id="Tdy-mG-xse"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bfa-d7-9qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="g9X-yr-HMW" userLabel="Exit" sceneMemberID="exit"/>
