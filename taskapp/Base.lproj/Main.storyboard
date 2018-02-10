@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,20 +60,41 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="gUF-c8-iGk">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="a7m-Rq-Suc">
-                            <connections>
-                                <segue destination="nlx-gM-6p1" kind="show" id="qyL-cH-op2"/>
-                            </connections>
-                        </barButtonItem>
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="BOf-30-hYE">
+                            <rect key="frame" x="8" y="7" width="145.5" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="a7m-Rq-Suc">
+                                <connections>
+                                    <segue destination="nlx-gM-6p1" kind="show" id="qyL-cH-op2"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="zQG-kZ-Ezi">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MIV-8E-WAN">
+                                    <rect key="frame" x="159.5" y="7" width="108" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="カテゴリー検索"/>
+                                </button>
+                                <connections>
+                                    <action selector="categoryButton:" destination="BYZ-38-t0r" id="9Hh-KB-gah"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="sarchTextField" destination="BOf-30-hYE" id="XqQ-Lx-VyR"/>
                         <outlet property="tableView" destination="LZN-0X-MC2" id="W4a-wO-U5D"/>
                         <segue destination="nlx-gM-6p1" kind="show" identifier="cellSegue" id="ecg-9v-7F5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1388" y="232"/>
+            <point key="canvasLocation" x="1387.5" y="231.33802816901408"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ohc-5E-BAX">
@@ -140,17 +162,35 @@
                                     <!--2018-02-04 06:57:28 +0000-->
                                 </date>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYK-BI-BXu">
+                                <rect key="frame" x="16" y="469" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oO5-89-CnI">
+                                <rect key="frame" x="16" y="498" width="181" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="M42-5E-UTf" firstAttribute="trailing" secondItem="kYK-BI-BXu" secondAttribute="trailing" constant="217" id="1vH-l0-USR"/>
+                            <constraint firstItem="kYK-BI-BXu" firstAttribute="leading" secondItem="M42-5E-UTf" secondAttribute="leading" constant="16" id="6Ak-Qk-G44"/>
                             <constraint firstItem="y09-z4-JPk" firstAttribute="top" secondItem="dNG-fJ-ZUW" secondAttribute="bottom" constant="10" id="B7a-ux-ccQ"/>
+                            <constraint firstItem="oO5-89-CnI" firstAttribute="leading" secondItem="M42-5E-UTf" secondAttribute="leading" constant="16" id="Dbn-8b-pQh"/>
+                            <constraint firstItem="M42-5E-UTf" firstAttribute="trailing" secondItem="oO5-89-CnI" secondAttribute="trailing" constant="123" id="GD5-16-CMR"/>
                             <constraint firstItem="jai-sc-3KD" firstAttribute="top" secondItem="y09-z4-JPk" secondAttribute="bottom" constant="10" id="GVJ-co-P4n"/>
                             <constraint firstItem="2rz-MS-nAt" firstAttribute="trailing" secondItem="M42-5E-UTf" secondAttribute="trailing" id="NWa-D2-iHy"/>
                             <constraint firstItem="dNG-fJ-ZUW" firstAttribute="leading" secondItem="M42-5E-UTf" secondAttribute="leading" constant="10" id="QPs-56-P1Q"/>
                             <constraint firstItem="y09-z4-JPk" firstAttribute="leading" secondItem="M42-5E-UTf" secondAttribute="leading" constant="10" id="W4q-5h-xLz"/>
                             <constraint firstItem="2rz-MS-nAt" firstAttribute="leading" secondItem="M42-5E-UTf" secondAttribute="leading" id="XQr-cx-1V4"/>
                             <constraint firstItem="2rz-MS-nAt" firstAttribute="top" secondItem="hHn-aF-cdO" secondAttribute="bottom" constant="10" id="agk-l7-y5B"/>
+                            <constraint firstItem="kYK-BI-BXu" firstAttribute="top" secondItem="2rz-MS-nAt" secondAttribute="bottom" constant="43" id="jvb-jN-1ip"/>
                             <constraint firstItem="M42-5E-UTf" firstAttribute="trailing" secondItem="jai-sc-3KD" secondAttribute="trailing" constant="10" id="l6c-9z-3R1"/>
+                            <constraint firstItem="oO5-89-CnI" firstAttribute="top" secondItem="kYK-BI-BXu" secondAttribute="bottom" constant="8" id="mZA-b1-AcB"/>
                             <constraint firstItem="M42-5E-UTf" firstAttribute="trailing" secondItem="dNG-fJ-ZUW" secondAttribute="trailing" constant="10" id="nVS-rB-aQ8"/>
                             <constraint firstItem="hHn-aF-cdO" firstAttribute="leading" secondItem="M42-5E-UTf" secondAttribute="leading" constant="10" id="pRu-gC-sm6"/>
                             <constraint firstItem="M42-5E-UTf" firstAttribute="trailing" secondItem="hHn-aF-cdO" secondAttribute="trailing" constant="10" id="pqz-H6-e4O"/>
@@ -162,6 +202,7 @@
                         <viewLayoutGuide key="safeArea" id="M42-5E-UTf"/>
                     </view>
                     <connections>
+                        <outlet property="categoryTextField" destination="oO5-89-CnI" id="N2K-6F-RMF"/>
                         <outlet property="contentsTextView" destination="hHn-aF-cdO" id="XeP-Dl-eSS"/>
                         <outlet property="datePicker" destination="2rz-MS-nAt" id="07W-Gp-Okj"/>
                         <outlet property="titleTextField" destination="y09-z4-JPk" id="Tdy-mG-xse"/>

@@ -10,15 +10,34 @@ import UIKit
 import RealmSwift
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var tableView: UITableView!
-    
+   
     let realm = try! Realm()
     
-    var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: false)
+    var task: Task!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var sarchTextField: UITextField!
+    
+     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: false)
+    
+    @IBAction func categoryButton(_ sender: Any) {
+        
+        let sarch = sarchTextField.text
+        
+    // NSPredica使って検索条件を指定します
+        let predicate = NSPredicate(format: "category = %@ ", sarch!)
+        
+        taskArray = realm.objects(Task.self).filter(predicate)
+      
+        tableView.reloadData()
+        
+        }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {   // UITableViewDataSourceプロトコルのメソッドで、データの数を返す
         return taskArray.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { //UITableViewDataSourceプロトコルのメソッドで、セルの内容を返す
@@ -61,6 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // segue で画面遷移するに呼ばれる
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+       
         let inputViewController:InputViewController = segue.destination as! InputViewController
         
         if segue.identifier == "cellSegue" {
@@ -85,6 +105,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view, typically from a nib.
         tableView.delegate = self
         tableView.dataSource = self
+       
+        print(taskArray)
         
     }
 
