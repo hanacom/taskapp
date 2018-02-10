@@ -19,20 +19,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var sarchTextField: UITextField!
     
-     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: false)
+    var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: false)
     
-    @IBAction func categoryButton(_ sender: Any) {
+    @IBAction func categorybutton(_ sender: Any) {
         
         let sarch = sarchTextField.text
         
-    // NSPredica使って検索条件を指定します
+        // NSPredica使って検索条件を指定します
         let predicate = NSPredicate(format: "category = %@ ", sarch!)
         
         taskArray = realm.objects(Task.self).filter(predicate)
-      
+        
         tableView.reloadData()
         
-        }
+        if sarchTextField.text == "" {
+            taskArray = realm.objects(Task.self)
+            tableView.reloadData()
+          }
+        
+       
+        
+    }
+    
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {   // UITableViewDataSourceプロトコルのメソッドで、データの数を返す

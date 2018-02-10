@@ -79,10 +79,10 @@
                                     <rect key="frame" x="159.5" y="7" width="108" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="カテゴリー検索"/>
+                                    <connections>
+                                        <action selector="categorybutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7aD-Wt-18q"/>
+                                    </connections>
                                 </button>
-                                <connections>
-                                    <action selector="categoryButton:" destination="BYZ-38-t0r" id="9Hh-KB-gah"/>
-                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
